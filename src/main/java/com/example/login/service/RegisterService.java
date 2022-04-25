@@ -44,18 +44,19 @@ public class RegisterService {
         }
         messageModel.setStateCode(200);
         messageModel.setData(user);
-        save(mapper,user);
-
+        int n = save(mapper, user);
+        if (n <= 0) {
+            messageModel.setStateCode(400);
+            messageModel.setMessage("注册用户失败");
+            return messageModel;
+        }
+        System.out.println("用户注册成功");
         return messageModel;
     }
 
     // 将用户输入是我数据存储到数据库中
-    private void save(UserMapper mapper,User mapperUser) {
-        Integer n = mapper.UserInsert(mapperUser);
-        System.out.println(n);
-        if (n > 0) {
-            System.out.println("注册用户成功");
-        }
+    private int save(UserMapper mapper,User mapperUser) {
+        return mapper.UserInsert(mapperUser);
     }
 
     private boolean ConUsername(User mapperUser) {
