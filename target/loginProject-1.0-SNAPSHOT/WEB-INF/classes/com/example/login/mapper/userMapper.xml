@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.login.mapper.UserMapper">
+    <select id="getUser" resultType="com.example.login.pojo.User" parameterType="String">
+        select * from users where username = #{uname}
+    </select>
+<!--    <select id="getPwd" parameterType="String" resultType="String">-->
+<!--        select * from users -->
+<!--    </select>-->
+    <insert id="UserInsert" parameterType="com.example.login.pojo.User">
+        insert bank.users(username,password,email) value(#{username},#{password},#{email})
+    </insert>
+</mapper>
