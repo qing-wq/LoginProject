@@ -49,6 +49,7 @@ public class RegisterService {
             messageModel.setMessage("注册用户失败");
             return messageModel;
         }
+        sqlSession.commit();
         messageModel.setStateCode(200);
         messageModel.setData(user);
         System.out.println("用户注册成功");
