@@ -42,25 +42,20 @@ public class RegisterService {
             messageModel.setMessage("该用户名已存在");
             return messageModel;
         }
-        messageModel.setStateCode(200);
-        messageModel.setData(user);
-        int n = save(mapper, user);
+        int n = mapper.UserInsert(user);
+        System.out.println("n="+n);
         if (n <= 0) {
             messageModel.setStateCode(400);
             messageModel.setMessage("注册用户失败");
             return messageModel;
         }
+        messageModel.setStateCode(200);
+        messageModel.setData(user);
         System.out.println("用户注册成功");
         return messageModel;
     }
 
-    // 将用户输入是我数据存储到数据库中
-    private int save(UserMapper mapper,User mapperUser) {
-        return mapper.UserInsert(mapperUser);
-    }
-
     private boolean ConUsername(User mapperUser) {
-        System.out.println(mapperUser);
         if (mapperUser == null) {
             return false;
         }
