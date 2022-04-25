@@ -6,9 +6,6 @@
     <select id="getUser" resultType="com.example.login.pojo.User" parameterType="String">
         select * from users where username = #{uname}
     </select>
-<!--    <select id="getPwd" parameterType="String" resultType="String">-->
-<!--        select * from users -->
-<!--    </select>-->
     <insert id="UserInsert" parameterType="com.example.login.pojo.User">
         insert bank.users(username,password,email) value(#{username},#{password},#{email})
     </insert>
