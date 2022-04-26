@@ -43,7 +43,6 @@ public class RegisterService {
             return messageModel;
         }
         int n = mapper.UserInsert(user);
-        System.out.println("n="+n);
         if (n <= 0) {
             messageModel.setStateCode(400);
             messageModel.setMessage("注册用户失败");
