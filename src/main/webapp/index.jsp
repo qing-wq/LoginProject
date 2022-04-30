@@ -12,7 +12,7 @@
     <span id="message" style="color: red">${messageModel.message}</span>
 <%--    <input type="submit" value="登录">--%>
     <button id="loginBtn" value="login">Login</button>
-<%--    <button id="register" value="注册">Register</button>--%>
+    <button id="register" value="注册">Register</button>
 </form>
 <a href="${pageContext.request.contextPath}/register.jsp">注册</a>
 </body>

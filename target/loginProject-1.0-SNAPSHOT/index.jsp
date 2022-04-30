@@ -7,11 +7,12 @@
 <body>
 <form action="${pageContext.request.contextPath}/login" method="post" id="loginForm" class="box">
     <h1>login</h1>
-    <input type="text" name="username" id="username" placeholder="Username" value=${messageModel.data.username}><br>
-    <input type="password" name="password" id="password" placeholder="Password" value=${messageModel.data.password}><br>
-    <span id="message" style="color: red">${messageModel.message}</span> <br>
+    <input type="text" name="username" id="username" placeholder="Username" value=${messageModel.data.username}>
+    <input type="password" name="password" id="password" placeholder="Password" value=${messageModel.data.password}>
+    <span id="message" style="color: red">${messageModel.message}</span>
 <%--    <input type="submit" value="登录">--%>
     <button id="loginBtn" value="login">Login</button>
+    <button id="register" value="注册">Register</button>
 </form>
 <a href="${pageContext.request.contextPath}/register.jsp">注册</a>
 </body>
