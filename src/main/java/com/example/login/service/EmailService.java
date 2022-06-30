@@ -48,10 +48,9 @@ public class EmailService implements Runnable {
             // 发件人
             mimeMessage.setFrom(new InternetAddress("2702461713@qq.com"));
             // 收件人
-            System.out.println("准备发送邮件到："+user.getEmail());
             mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(user.getEmail()));
             mimeMessage.setSubject("Welcome to FileUploadProject");
-            mimeMessage.setContent("欢迎使用文件上传小组件,感谢您的支持φ(゜▽゜*)♪", "text/html;charset=utf-8");
+            mimeMessage.setContent("欢迎登录", "text/html;charset=utf-8");
 
             transport.sendMessage(mimeMessage, mimeMessage.getAllRecipients());
             transport.close();

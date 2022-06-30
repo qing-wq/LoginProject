@@ -27,7 +27,5 @@
         }
         $("#loginForm").submit();
     })
-
-
 </script>
 </html>

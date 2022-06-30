@@ -38,7 +38,6 @@ public class LoginServlet extends HttpServlet {
             request.getSession().setAttribute(Constant.USER_SESSION,request.getSession().getId());
             request.getSession().setAttribute("user",messageModel.getData());
             response.sendRedirect("/loginProject/user/home.jsp");
-//            response.sendRedirect("user/home.jsp");
         } else if (messageModel.getStateCode() == 400) {
             // 登录失败
             request.setAttribute("messageModel",messageModel);
